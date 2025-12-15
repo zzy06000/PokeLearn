@@ -1,0 +1,194 @@
+/* Full Screen Overlay - Centered */
+.bag-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  /* Dark dim */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.bag-container {
+  width: 90%;
+  max-width: 800px;
+  height: 80vh;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+}
+
+.bag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.bag-header h2 {
+  font-size: 1.8em;
+  margin: 0;
+  color: #333;
+}
+
+.close-btn {
+  background: #ff5252;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/* Grid Layout */
+.bag-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* 2 Columns */
+  gap: 20px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Horizontal Card Structure */
+.bag-card {
+  position: relative;
+  /* For absolute badge */
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  /* Increased Padding */
+  display: flex;
+  /* Row Layout */
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
+  cursor: pointer;
+  min-height: 110px;
+  height: auto;
+  /* Allow growth */
+}
+
+.bag-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bag-card.active {
+  border-color: #4CAF50;
+  background: #E8F5E9;
+}
+
+/* Left Side: Avatar */
+.card-visual {
+  width: 80px;
+  height: 80px;
+  background: #eee;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.bag-sprite {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Right Side: Info */
+.card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bag-name-row {
+  display: flex;
+  flex-direction: column;
+  /* Vertical stack for names */
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.cn-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #222;
+}
+
+.en-name {
+  font-size: 0.8em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.bag-level {
+  font-size: 0.9em;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* XP */
+.bag-xp-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.bag-xp-bar {
+  flex: 1;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bag-xp-fill {
+  height: 100%;
+  background: #2196F3;
+}
+
+.bag-xp-text {
+  font-size: 0.75em;
+  color: #999;
+  width: 40px;
+  text-align: right;
+}
+
+.equipped-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(76, 175, 80, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #4CAF50;
+  font-size: 0.7em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

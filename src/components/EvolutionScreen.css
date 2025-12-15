@@ -1,0 +1,149 @@
+.evolution-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, #ffe0b2 0%, #ff6f00 100%);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.evolution-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2010;
+  /* Ensure content is on top */
+  width: 100%;
+}
+
+.evo-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  animation: pulseText 2s infinite;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.evo-stage {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.evo-sprite {
+  position: absolute;
+  /* Relative to .evo-stage */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+}
+
+.from-sprite {
+  animation: fadeOutSprite 2s 1s forwards;
+  z-index: 1;
+}
+
+.to-sprite {
+  opacity: 0;
+  animation: fadeInSprite 2s 1s forwards;
+  z-index: 2;
+}
+
+.evo-flash {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: flashAnim 3s ease-in-out;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.evo-message {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  max-width: 80%;
+  text-align: center;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.evo-continue-btn {
+  padding: 12px 24px;
+  font-size: 1.1em;
+  background: white;
+  color: #ff6f00;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  z-index: 2020;
+}
+
+.evo-continue-btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pulseText {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeOutSprite {
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes fadeInSprite {
+  to {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes flashAnim {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  80% {
+    opacity: 0;
+    transform: scale(2);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,38 @@
+:root {
+  --color-primary: #ffcb05;
+  /* Pokemon Yellow */
+  --color-secondary: #2a75bb;
+  /* Pokemon Blue */
+  --color-danger: #ff5252;
+  --color-success: #4caf50;
+  --color-text: #333333;
+  --color-bg: #f0f0f0;
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #202020;
+  /* Dark bg for immersive feel */
+  color: var(--color-text);
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+  /* Prevent scrolling */
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
